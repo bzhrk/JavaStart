@@ -20,8 +20,8 @@ public class VariableNamesTheme {
         System.out.println(maxNum);
 
         // Количество десятков
-        int numberTens = 1;
-        System.out.println(numberTens);
+        int numberOfTens = 1;
+        System.out.println(numberOfTens);
 
         // Вес собаки
         int dogWeight = 1;
@@ -186,6 +186,5 @@ public class VariableNamesTheme {
         // American standard code for information interchange
         String acsii = "acsii";
         System.out.println(acsii);
-
     }
 }
