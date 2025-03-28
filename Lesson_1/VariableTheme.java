@@ -4,71 +4,42 @@ public class VariableTheme {
         // 1. ВЫВОД ХАРАКТЕРИСТИК КОМПЬЮТЕРА
         // =================================
         System.out.println("1. ВЫВОД ХАРАКТЕРИСТИК КОМПЬЮТЕРА");
-
-        // Количество USB портов
         byte usbPortCount = 4;
         System.out.println("Количество USB портов: " + usbPortCount);
-
-        // Количество ядер процессора
         short cpuCoreCount = 16;
-        System.out.println("Количестов ядер: " + cpuCoreCount);
-
-        // Обьем оперативной памяти в килобайтах
+        System.out.println("Количество ядер: " + cpuCoreCount);
         int ramCapacity = 100_663_296;
         System.out.println("Объем оперативной памяти в кб: " + ramCapacity);
-
-        // Обьем жесткого диска
         long hddCapacity = 2_147_483_648L;
         System.out.println("Объем жесткого диска в кб: " + hddCapacity);
-
-        // Частота процессора?
         float cpuFrequency = 3.6f;
         System.out.println("Частота процессора: " + cpuFrequency);
-
-        // Частота обновления монитора
         double screenRefreshRate = 60.0;
         System.out.println("Частота обновления экрана: " + screenRefreshRate);
-
-        // Есть ssd?
         boolean hasSsd = true;
         System.out.println("Есть SSD? " + hasSsd);
-
-        // Класс энергопотребления
         char energyClass = 'A';
-        System.out.println("Класс энергопотребления:" + energyClass);
-        System.out.println();
+        System.out.println("Класс энергопотребления:" + energyClass + "\n");
 
         // =====================================
         // 2. РАСЧЕТ СТОИМОСТИ ТОВАРА СО СКИДКОЙ
         // =====================================================
         System.out.println("2. РАСЧЕТ СТОИМОСТИ ТОВАРА СО СКИДКОЙ");
-
-        // Стоимость товаров
         double penPrice = 105.5;
-        double bookPrice = 235.83;
-
-        // Скидка в процентах
-        double discountPercent = 11;
-
-        // Общая стоимость товара
-        double totalPrice = penPrice + bookPrice;
-        totalPrice = Math.round(totalPrice * 100.0) / 100;
-
-        // Сумма скидки
-        double discountSum = totalPrice * (discountPercent / 100);
-        discountSum = Math.round(discountSum * 100.0) / 100;
-
-        // Общая стоимость товара со скидкой
-        double finalPrice = totalPrice - discountSum;
-        finalPrice = Math.round(finalPrice * 100.0) / 100;
-
         System.out.println("Стоимость ручки: " + penPrice);
+        double bookPrice = 235.83;
         System.out.println("Стоимость книги: " + bookPrice);
+        double discountPercent = 11;
         System.out.println("Скидка в процентах: " + discountPercent);
+        double basePrice = penPrice + bookPrice;
+        basePrice = Math.round(basePrice * 100.0) / 100;
+        System.out.println("Общая стоимость товара: " + basePrice);
+        double discountSum = basePrice * (discountPercent / 100);
+        discountSum = Math.round(discountSum * 100.0) / 100;
         System.out.println("Сумма скидки: " + discountSum);
-        System.out.println("Общая стоимость товара: " + totalPrice);
-        System.out.println("Общая стоимость товара со скидкой: " + finalPrice);
-        System.out.println();
+        double discountPrice = basePrice - discountSum;
+        discountPrice = Math.round(discountPrice * 100.0) / 100;
+        System.out.println("Общая стоимость товара со скидкой: " + discountPrice + "\n");
 
         // ==================================
         // 3. ВЫВОД СЛОВА JAVA БЕЗ ПЕРЕМЕННЫХ
@@ -83,108 +54,54 @@ public class VariableTheme {
         // ================================================
         // 4. ВЫВОД MIN И MAX ЗНАЧЕНИЙ ЦЕЛЫХ ЧИСЛОВЫХ ТИПОВ
         // ================================================
-        System.out.println("ВЫВОД MIN И MAX ЗНАЧЕНИЙ ЦЕЛЫХ ЧИСЛОВЫХ ТИПОВ");
-
-        // Инициализируем maxByte максимальным значением
+        System.out.println("4. ВЫВОД MIN И MAX ЗНАЧЕНИЙ ЦЕЛЫХ ЧИСЛОВЫХ ТИПОВ");
         byte maxByte = 127;
-
-        // Вывод первоначального значения maxByte
-        System.out.println("Первоначальное значение maxByte :" + maxByte);
-
-        // Вывод maxByte ++
-        System.out.println("Инкрементируем на 1. maxByte :" + ++maxByte);
-
-        // Вывод maxByte --
-        System.out.println("Декрементируем на 1. maxByte :" + --maxByte);
-        System.out.println();
-
-        // Инициализируем maxShort максимальным значением
+        System.out.println("Первоначальное значение: " + maxByte);
+        System.out.println("Инкрементируем на 1: " + ++maxByte);
+        System.out.println("Декрементируем на 1: " + --maxByte);
         short maxShort = 32_767;
-
-        // Вывод первоначального значения maxShort
-        System.out.println("Первоначальное значение maxShort :" + maxShort);
-
-        // Вывод maxShort ++
-        System.out.println("Инкрементируем на 1. maxShort :" + ++maxShort);
-
-        // Вывод maxShort --
-        System.out.println("Декрементируем на 1. maxShort :" + --maxShort);
-        System.out.println();
-
-        // Инициализируем maxInt максимальным значением
+        System.out.println("Первоначальное значение : " + maxShort);
+        System.out.println("Инкрементируем на 1: " + ++maxShort);
+        System.out.println("Декрементируем на 1: " + --maxShort);
         int maxInt = 2_147_483_647;
-
-        // Вывод первоначального значения maxInt
-        System.out.println("Первоначальное значение maxInt :" + maxInt);
-
-        // Вывод maxInt ++
-        System.out.println("Инкрементируем на 1. maxInt :" + ++maxInt);
-
-        // Вывод maxInt --
-        System.out.println("Декрементируем на 1. maxInt :" + --maxInt);
-        System.out.println();
-
-        // Инициализируем maxLong максимальным значением
+        System.out.println("Первоначальное значение: " + maxInt);
+        System.out.println("Инкрементируем на 1: " + ++maxInt);
+        System.out.println("Декрементируем на 1: " + --maxInt);
         long maxLong = 9_223_372_036_854_775_807L;
-
-        // Вывод первоначального значения maxLong
-        System.out.println("Первоначальное значение maxLong :" + maxLong);
-
-        // Вывод maxLong ++
-        System.out.println("Инкрементируем на 1. maxLong :" + ++maxLong);
-
-        // Вывод maxLong --
-        System.out.println("Декрементируем на 1. maxLong :" + --maxLong);
-        System.out.println();
-
-        // Инициализируем maxCharNum максимальным значением
-        char maxCharNum = 65_535;
-
-        // Вывод первоначального значения maxCharNum
-        System.out.println("Первоначальное значение maxChar :" + (int) maxCharNum);
-
-        // Вывод maxCharNum ++
-        System.out.println("Инкрементируем на 1. Переполнение и обнуление maxCharNum :" + (int) ++maxCharNum);
-
-        // Вывод maxCharNum --
-        System.out.println("Декрементируем на 1. maxCharNum :" + (int) --maxCharNum);
-        System.out.println();
+        System.out.println("Первоначальное значение : " + maxLong);
+        System.out.println("Инкрементируем на 1: " + ++maxLong);
+        System.out.println("Декрементируем на 1: " + --maxLong);
+        char maxChar = 65_535;
+        System.out.println("Первоначальное значение: " + (int) maxChar);
+        System.out.println("Инкрементируем на 1. Переполнение и обнуление: " + (int) ++maxChar);
+        System.out.println("Декрементируем на 1: " + (int) --maxChar + "\n");
 
         // ===================================
         // 5. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ПЕРЕМЕННЫХ
         // ===================================
         System.out.println("5. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ПЕРЕМЕННЫХ");
-
-        // Вариант 1. Меняем местами переменные с помощью третьей переменной
         System.out.println("Вариант 1. Меняем местами значения переменныx с помощью третьей переменной");
         int a = 2;
         int b = 5;
-        System.out.println("Исходное значение перменной a :" + a);
-        System.out.println("Исходное значение перменной b :" + b);
-        int c = a;
+        System.out.println("Исходное значение перменной a: " + a);
+        System.out.println("Исходное значение перменной b: " + b);
+        int tmp = a;
         a = b;
-        b = c;
+        b = tmp;
         System.out.println("Новое значение переменной a: " + a);
         System.out.println("Новое значение переменной b: " + b);
-        System.out.println();
-
-        // Вариант 2. Меняем местами переменные с помощью арифметических операций
         System.out.println("Варинт 2. Меняем местами переменные с помощью арифметических операций");
-        a = a + b;
+        a += b;
         b = a - b;
-        a = a - b;
+        a -= b;
         System.out.println("Новое значение переменной a: " + a);
         System.out.println("Новое значение переменной b: " + b);
-        System.out.println();
-
-        // Вариант 3. Меняем местами переменные с помощью побитовой операции
         System.out.println("Вариант 3. Меняем местами переменные с помощью побитовой операции");
         a = a ^ b;
         b = a ^ b;
         a = a ^ b;
         System.out.println("Новое значение переменной a: " + a);
-        System.out.println("Новое значение переменной b: " + b);
-        System.out.println();
+        System.out.println("Новое значение переменной b: " + b + "\n");
 
         // ============================
         // 6. ВЫВОД СИМВОЛОВ И ИХ КОДОВ
@@ -199,28 +116,23 @@ public class VariableTheme {
         char caret = '^';
         System.out.println("Код символа: " + (int) caret + " Символ: ^");
         char tilde = '~';
-        System.out.println("Код символа: " + (int) tilde + " Символ: ~");
-        System.out.println();
+        System.out.println("Код символа: " + (int) tilde + " Символ: ~" + "\n");
 
         // =================================
         // 7. ВЫВОД В КОНСОЛЬ ASCII-АРТ ДЮКА
         // =================================
         System.out.println("7. ВЫВОД В КОНСОЛЬ ASCII-АРТ ДЮКА");
-
-        // Уникальные символы
-        char s = '/';
-        char bs = '\\';
-        char u = '_';
-        char l = '(';
-        char r = ')';
-
-        // Вывод ASCII-арта Дюка
-        System.out.println("    " + s + bs);
-        System.out.println("   " + s + "  " + bs);
-        System.out.println("  " + s + u + l + " " + r + bs);
-        System.out.println(" " + s + "      " + bs);
-        System.out.println(s + "" + u + u + u + u + s + bs + u + u + bs);
-        System.out.println();
+        char slash = '/';
+        char backslash = '\\';
+        char underscore = '_';
+        char leftParenthesis = '(';
+        char rightParenthesis = ')';
+        System.out.println("    " + slash + backslash);
+        System.out.println("   " + slash + "  " + backslash);
+        System.out.println("  " + slash + underscore + leftParenthesis + " " + rightParenthesis + backslash);
+        System.out.println(" " + slash + "      " + backslash);
+        System.out.println(slash + "" + underscore + underscore + underscore + underscore + slash
+                + backslash + underscore + underscore + backslash + "\n");
 
         // =====================================================
         // 8. МАНИПУЛЯЦИИ С СОТНЯМИ, ДЕСЯТКАМИ И ЕДИНИЦАМИ ЧИСЛА
@@ -229,25 +141,22 @@ public class VariableTheme {
         int num = 123;
         int hundreds = num / 100;
         int tens = (num / 10) % 10;
-        int units = num % 10;
-
-        System.out.println("Число 123 содержит: ");
-        System.out.println("Сотен -" + hundreds);
-        System.out.println("Десятков -" + tens);
-        System.out.println("Единиц -" + units);
-        System.out.println("Сумма разрядов = " + (hundreds + tens + units));
-        System.out.println("Произведение разрядов = " + (hundreds * tens * units));
-        System.out.println();
+        int ones = num % 10;
+        System.out.println("Число " + num + " содержит: ");
+        System.out.println("Сотен - " + hundreds);
+        System.out.println("Десятков - " + tens);
+        System.out.println("Единиц - " + ones);
+        System.out.println("Сумма разрядов = " + (hundreds + tens + ones));
+        System.out.println("Произведение разрядов = " + (hundreds * tens * ones) + "\n");
 
         // =====================================================
         // 9. ПЕРЕВОД СЕКУНД В ЧАСЫ, МИНУТЫ И СЕКУНДЫ
         // =====================================================
-        System.out.println("ПЕРЕВОД СЕКУНД В ЧАСЫ, МИНУТЫ И СЕКУНДЫ");
-        int seconds = 86399;
-        int resultHours = seconds / 3600;
-        int resultMinutes = (seconds % 3600) / 60;
-        int resultSeconds = seconds % 60;
-        System.out.println(resultHours + ":" + resultMinutes + ":" + resultSeconds);
-        System.out.println();
+        System.out.println("9. ПЕРЕВОД СЕКУНД В ЧАСЫ, МИНУТЫ И СЕКУНДЫ");
+        int totalSeconds = 86399;
+        int hh = totalSeconds / 3600;
+        int mm = (totalSeconds % 3600) / 60;
+        int ss = totalSeconds % 60;
+        System.out.println(hh + ":" + mm + ":" + ss + "\n");
     }
 }
