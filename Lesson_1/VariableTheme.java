@@ -131,8 +131,8 @@ public class VariableTheme {
         System.out.println("   " + slash + "  " + backslash);
         System.out.println("  " + slash + underscore + leftParenthesis + " " + rightParenthesis + backslash);
         System.out.println(" " + slash + "      " + backslash);
-        System.out.println(slash + "" + underscore + underscore + underscore + underscore + slash
-                + backslash + underscore + underscore + backslash + "\n");
+        System.out.println(slash + "" + underscore + underscore + underscore + underscore + slash +
+                backslash + underscore + underscore + backslash + "\n");
 
         // =====================================================
         // 8. МАНИПУЛЯЦИИ С СОТНЯМИ, ДЕСЯТКАМИ И ЕДИНИЦАМИ ЧИСЛА
