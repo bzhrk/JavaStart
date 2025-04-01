@@ -89,17 +89,16 @@ public class IfElseStatementTheme {
         // 5. ОПРЕДЕЛЕНИЕ СИМВОЛА ПО ЕГО КОДУ
         // ==================================
         System.out.println("5. ОПРЕДЕЛЕНИЕ СИМВОЛА ПО ЕГО КОДУ");
-        char d = '\u0057';
-        if (d >= 'A' && d <= 'Z') {
-            System.out.println("'" + d + "'  - большая буква");
-        } else if (d >= 'a' && d <= 'z') {
-            System.out.println("'" + d + "'  - маленькая буква");
-        } else if (d >= '0' && d <= '9') {
-            System.out.println("'" + d + "'  - цифра");
+        char unknownChar = '\u0057';
+        if (unknownChar >= 'A' && unknownChar <= 'Z') {
+            System.out.println("'" + unknownChar + "'  - большая буква" + "\n");
+        } else if (unknownChar >= 'a' && unknownChar <= 'z') {
+            System.out.println("'" + unknownChar + "'  - маленькая буква" + "\n");
+        } else if (unknownChar >= '0' && unknownChar <= '9') {
+            System.out.println("'" + unknownChar + "'  - цифра" + "\n");
         } else {
-            System.out.println("'" + d + "'  - ни буква ни цифра");
+            System.out.println("'" + unknownChar + "'  - ни буква ни цифра" + "\n");
         }
-        System.out.println();
 
         // ==================================
         // 6. ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %
@@ -125,12 +124,23 @@ public class IfElseStatementTheme {
         System.out.println("7. ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ");
         int historyPercent = 59;
         int programmingPercent = 92;
-        int historyGrade = historyPercent > 91 ? 5
-                : historyPercent > 73 ? 4
-                        : historyPercent > 60 ? 3 : 2;
-        int programmingGrade = programmingPercent > 91 ? 5
-                : programmingPercent > 73 ? 4
-                        : programmingPercent > 60 ? 3 : 2;
+        int historyGrade = 2;
+        int programmingGrade = 2;
+
+        if (historyPercent > 91) {
+            historyGrade = 5;
+        } else if (historyPercent > 73) {
+            historyGrade = 4;
+        } else if (historyPercent > 60) {
+            historyGrade = 3;
+        }
+        if (programmingPercent > 91) {
+            programmingGrade = 5;
+        } else if (programmingPercent > 73) {
+            programmingGrade = 4;
+        } else if (programmingPercent > 60) {
+            programmingGrade = 3;
+        }
         double averageGrade = (historyGrade + programmingGrade) / 2;
         double averagePercent = (historyPercent + programmingPercent) / 2;
         System.out.println("История: " + programmingGrade);
@@ -141,12 +151,12 @@ public class IfElseStatementTheme {
         // ==================================
         // 8. РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ
         // ==================================
-        System.out.println("7. РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ");
+        System.out.println("8. РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ");
         double mounthlySales = 13025.233;
         double rent = 5123.018;
         double costPrice = 9001.729;
         double yearProfit = 12 * (mounthlySales - rent - costPrice);
-        char sign = yearProfit < 0 ? '-' : (yearProfit > 0 ? '+' : ' ');
-        System.out.printf("Прибыль за год: %c%.2f%n", sign, Math.abs(yearProfit));
+        String sign = yearProfit > 0 ? "+" : yearProfit < 0 ? "-" : "";
+        System.out.printf("Прибыль за год: %s%.2f%n", sign, Math.abs(yearProfit));
     }
 }
