@@ -52,9 +52,6 @@ public class CyclesTheme {
 
         System.out.println("\n");
 
-        // =================================================
-        // 3. ВЫВОД РЕВЕРСИВНОГО ЧИСЛА И СУММЫ ЕГО ЦИФР
-        // =================================================
         System.out.println("3. ВЫВОД РЕВЕРСИВНОГО ЧИСЛА И СУММЫ ЕГО ЦИФР");
 
         int number = 1234;
@@ -62,10 +59,12 @@ public class CyclesTheme {
 
         while (number > 0) {
             int digit = number % 10;
+            System.out.println(digit); // выводим цифру в обратном порядке
             sum += digit;
-            System.out.println(digit);
             number /= 10;
         }
+
+        System.out.println("Сумма цифр = " + sum);
         System.out.println();
 
         // =================================================
