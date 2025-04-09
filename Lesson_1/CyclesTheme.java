@@ -94,22 +94,23 @@ public class CyclesTheme {
         // =========================================================
         System.out.println("5. ПРОВЕРКА КОЛИЧЕСТВА ДВОЕК ЧИСЛА НА ЧЕТНОСТЬ/НЕЧЕТНОСТЬ");
 
-        int number = 3242592;
-        originalNumber = number;
+        originalNumber = 3242592;
+        currentNumber = originalNumber;
         int twosCount = 0;
         int digit = 0;
 
-        while (originalNumber > 0) {
-            digit = originalNumber % 10;
+        while (currentNumber > 0) {
+            digit = currentNumber % 10;
             if (digit == 2) {
                 twosCount++;
             }
-            originalNumber /= 10;
+            currentNumber /= 10;
         }
 
         String parity = (twosCount % 2 == 0) ? "четное" : "нечетное";
-        System.out.println("В числе " +
-                number + " количество двоек — " + twosCount + ", это " + parity + " число.\n");
+        System.out.println("В числе " + originalNumber +
+                " количество двоек — " + twosCount +
+                ", это " + parity + " число.\n");
 
         // =============================
         // 6. ВЫВОД ГЕОМЕТРИЧЕСКИХ ФИГУР
@@ -174,18 +175,18 @@ public class CyclesTheme {
         // 8. ПРОВЕРКА, ЯВЛЯЕТСЯ ЛИ ЧИСЛО ПАЛИНДРОМОМ
         // ==========================================
         System.out.println("8. ПРОВЕРКА, ЯВЛЯЕТСЯ ЛИ ЧИСЛО ПАЛИНДРОМОМ");
-        currentNumber = 1234321;
-        int original = currentNumber;
+        originalNumber = 1234321;
+        currentNumber = originalNumber;
         int reversed = 0;
-        while (original > 0) {
-            digit = original % 10;
+        while (currentNumber > 0) {
+            digit = currentNumber % 10;
             reversed = reversed * 10 + digit;
-            original /= 10;
+            currentNumber /= 10;
         }
-        if (currentNumber == reversed) {
-            System.out.println("Число " + currentNumber + " - палиндром\n");
+        if (originalNumber == reversed) {
+            System.out.println("Число " + originalNumber + " - палиндром\n");
         } else {
-            System.out.println("Число " + currentNumber + " - не палиндром\n");
+            System.out.println("Число " + originalNumber + " - не палиндром\n");
         }
 
         // =========================================================
@@ -193,14 +194,14 @@ public class CyclesTheme {
         // =================================================
         System.out.println("9. ПРОВЕРКА, ЯВЛЯЕТСЯ ЛИ ЧИСЛО СЧАСТЛИВЫМ");
 
-        number = 123321;
-        original = number;
+        originalNumber = 123321;
+        currentNumber = originalNumber;
 
         int leftSum = 0;
         int rightSum = 0;
 
         for (int i = 0; i < 6; i++) {
-            digit = original % 10;
+            digit = currentNumber % 10;
 
             if (i < 3) {
                 rightSum += digit; // последние 3 цифры
@@ -208,13 +209,13 @@ public class CyclesTheme {
                 leftSum += digit; // первые 3 цифры
             }
 
-            original /= 10;
+            currentNumber /= 10;
         }
 
         if (leftSum == rightSum) {
-            System.out.println("Число " + number + " — счастливое");
+            System.out.println("Число " + originalNumber + " — счастливое");
         } else {
-            System.out.println("Число " + number + " — не счастливое");
+            System.out.println("Число " + originalNumber + " — не счастливое");
         }
 
         System.out.println("Сумма левой части: " + leftSum);
