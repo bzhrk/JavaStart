@@ -48,7 +48,7 @@ public class CyclesTheme {
             maxNumber = thirdNumber;
         }
 
-        for (int i = maxNumber; i > minNumber; i--) {
+        for (int i = maxNumber - 1; i > minNumber; i--) {
             System.out.print(i + " ");
         }
         System.out.println("\n");
@@ -57,13 +57,13 @@ public class CyclesTheme {
         // 3. ВЫВОД РЕВЕРСИВНОГО ЧИСЛА И СУММЫ ЕГО ЦИФР
         // ============================================
         System.out.println("3. ВЫВОД РЕВЕРСИВНОГО ЧИСЛА И СУММЫ ЕГО ЦИФР");
-        int number = 1234;
+        int originalNumber = 1234;
         int digitSum = 0;
-        while (number != 0) {
-            int digit = number % 10;
+        while (originalNumber > 0) {
+            int digit = originalNumber % 10;
             digitSum += digit;
-            number /= 10;
-            System.out.print(digit + " ");
+            originalNumber /= 10;
+            System.out.print(digit);
         }
         System.out.println("\nСумма выделенных цифр: " + digitSum + "\n");
 
@@ -71,11 +71,11 @@ public class CyclesTheme {
         // 4. ВЫВОД ЧИСЕЛ В НЕСКОЛЬКО СТРОК
         // ================================
         System.out.println("4. ВЫВОД ЧИСЕЛ В НЕСКОЛЬКО СТРОК");
-        minNumber = 1;
-        maxNumber = 24;
+        rangeStart = 1;
+        rangeEnd = 24;
         int countInRow = 0;
 
-        for (int i = minNumber; i < maxNumber; i += 2) {
+        for (int i = rangeStart; i < rangeEnd; i += 2) {
             System.out.printf("%2d ", i);
             countInRow++;
             if (countInRow == 5) {
@@ -93,20 +93,22 @@ public class CyclesTheme {
         // 5. ПРОВЕРКА КОЛИЧЕСТВА ДВОЕК ЧИСЛА НА ЧЕТНОСТЬ/НЕЧЕТНОСТЬ
         // =========================================================
         System.out.println("5. ПРОВЕРКА КОЛИЧЕСТВА ДВОЕК ЧИСЛА НА ЧЕТНОСТЬ/НЕЧЕТНОСТЬ");
-        number = 3242592;
+
+        int number = 3242592;
+        originalNumber = number;
         int twosCount = 0;
         int digit = 0;
 
-        while (number != 0) {
-            digit = number % 10;
+        while (originalNumber > 0) {
+            digit = originalNumber % 10;
             if (digit == 2) {
                 twosCount++;
             }
-            number /= 10;
+            originalNumber /= 10;
         }
-        String parity = digit % 2 == 0 ? " четное " : " нечетное ";
 
-        System.out.println("В " + number + parity + "(" + digit + ") количество двоек" + "\n");
+        String parity = (twosCount % 2 == 0) ? "четное" : "нечетное";
+        System.out.println("В числе " + number + " количество двоек — " + twosCount + ", это " + parity + " число.\n");
 
         // =============================
         // 6. ВЫВОД ГЕОМЕТРИЧЕСКИХ ФИГУР
@@ -171,18 +173,18 @@ public class CyclesTheme {
         // 8. ПРОВЕРКА, ЯВЛЯЕТСЯ ЛИ ЧИСЛО ПАЛИНДРОМОМ
         // ==========================================
         System.out.println("8. ПРОВЕРКА, ЯВЛЯЕТСЯ ЛИ ЧИСЛО ПАЛИНДРОМОМ");
-        number = 1234321;
-        int original = number;
+        currentNumber = 1234321;
+        int original = currentNumber;
         int reversed = 0;
-        while (original != 0) {
+        while (original > 0) {
             digit = original % 10;
             reversed = reversed * 10 + digit;
             original /= 10;
         }
-        if (number == reversed) {
-            System.out.println("Число " + number + " - палиндром\n");
+        if (currentNumber == reversed) {
+            System.out.println("Число " + currentNumber + " - палиндром\n");
         } else {
-            System.out.println("Число " + number + " - не палиндром\n");
+            System.out.println("Число " + currentNumber + " - не палиндром\n");
         }
 
         // =========================================================
@@ -192,30 +194,30 @@ public class CyclesTheme {
 
         number = 123321;
         original = number;
-        digit = 0;
-        int firstSum = 0;
-        int secondSum = 0;
 
-        for (int i = 0; i < 3; i++) {
+        int leftSum = 0;
+        int rightSum = 0;
+
+        for (int i = 0; i < 6; i++) {
             digit = original % 10;
-            firstSum += digit;
+
+            if (i < 3) {
+                rightSum += digit; // последние 3 цифры
+            } else {
+                leftSum += digit; // первые 3 цифры
+            }
+
             original /= 10;
         }
 
-        for (int i = 0; i < 3; i++) {
-            digit = original % 10;
-            secondSum += digit;
-            original /= 10;
-        }
-
-        if (firstSum == secondSum) {
-            System.out.println("Число " + number + " - счастливое");
+        if (leftSum == rightSum) {
+            System.out.println("Число " + number + " — счастливое");
         } else {
-            System.out.println("Число " + number + " - не счастливое");
+            System.out.println("Число " + number + " — не счастливое");
         }
 
-        System.out.println("Сумма цифр " + number / 1000 + " = " + firstSum);
-        System.out.println("Сумма " + number % 1000 + " = " + secondSum);
+        System.out.println("Сумма левой части: " + leftSum);
+        System.out.println("Сумма правой части: " + rightSum);
 
         // ====================================
         // 10. ВЫВОД ТАБЛИЦЫ УМНОЖЕНИЯ ПИФАГОРА
@@ -226,9 +228,7 @@ public class CyclesTheme {
         for (int i = 2; i <= 9; i++) {
             System.out.printf("%4d", i);
         }
-        System.out.println();
-
-        System.out.println("---+-------------------------------");
+        System.out.println("\n---+-------------------------------");
 
         for (int i = 2; i <= 9; i++) {
             System.out.printf("%2d |", i);
