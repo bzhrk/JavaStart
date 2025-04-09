@@ -108,7 +108,8 @@ public class CyclesTheme {
         }
 
         String parity = (twosCount % 2 == 0) ? "четное" : "нечетное";
-        System.out.println("В числе " + number + " количество двоек — " + twosCount + ", это " + parity + " число.\n");
+        System.out.println("В числе " +
+                number + " количество двоек — " + twosCount + ", это " + parity + " число.\n");
 
         // =============================
         // 6. ВЫВОД ГЕОМЕТРИЧЕСКИХ ФИГУР
@@ -129,9 +130,9 @@ public class CyclesTheme {
                 count--;
             }
             countInRow--;
-            System.out.println("");
+            System.out.println();
         }
-        System.out.println("");
+        System.out.println();
 
         int maxWidth = 3;
         int currentWidth = 1;
@@ -237,6 +238,5 @@ public class CyclesTheme {
             }
             System.out.println();
         }
-
     }
 }
