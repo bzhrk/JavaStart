@@ -3,12 +3,12 @@ public class MyFirstGame {
         // ============
         // УГАДАЙ ЧИСЛО
         // ============
-        int originalNumber = 47;
+        int originalNumber = 2;
         int min = 1;
         int max = 100;
         int result = 1;
 
-        while (true) {
+        while (originalNumber != result) {
             result = (min + max) / 2;
 
             if (result > originalNumber) {
@@ -17,11 +17,8 @@ public class MyFirstGame {
             } else if (result < originalNumber) {
                 System.out.println(result + " меньше того что загадал компьютер");
                 min = result + 1;
-            } else {
-                System.out.println("Вы победили!");
-                break;
             }
         }
-
+        System.out.println("Вы победили!");
     }
 }
