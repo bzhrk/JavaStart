@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class PpsGameFormatting {
+public class RpsGameFormatting {
     public static void main(String[] args) throws InterruptedException {
         // ==========================
         // Игра Камень-Ножницы-Бумага
