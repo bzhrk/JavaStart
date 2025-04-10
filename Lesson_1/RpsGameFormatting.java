@@ -39,10 +39,8 @@ public class PpsGameFormatting {
 
         if (position1 > 66) {
             sign2 = paper;
-        } else {
-            if (position1 > 33) {
-                sign2 = scissors;
-            }
+        } else if (position1 > 33) {
+            sign2 = scissors;
         }
         System.out.println("Ход " + name2 + ": ");
 

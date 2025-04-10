@@ -5,7 +5,7 @@ public class Calculator {
         // ===========
         int a = 2;
         int b = 10;
-        int result = 0;
+        int result = 1;
         char operator = '^';
 
         if (operator == '+') {
@@ -19,11 +19,8 @@ public class Calculator {
         } else if (operator == '%') {
             result = a % b;
         } else if (operator == '^') {
-            result = 1;
-            int exponent = b; // сохраняем исходное значение степени
-            while (exponent > 0) {
+            for (int i = 0; i < b; i++) {
                 result *= a;
-                exponent--;
             }
         }
 
