@@ -17,7 +17,7 @@ public class Person {
         System.out.println("run");
     }
 
-    String speack() {
+    String speak() {
         return "Hello";
     }
 
