@@ -1,29 +1,27 @@
 public class Calculator {
-    public static void main(String[] args) {
-        // ============
-        // Калькулятор
-        // ===========
-        int a = 2;
-        int b = 10;
-        int result = 1;
-        char operator = '^';
+    public double calculate(int firstNum, char operator, int secondNum) {
+        switch (operator) {
+            case '+':
+                return firstNum + secondNum;
+            case '-':
+                return firstNum - secondNum;
+            case '*':
+                return firstNum * secondNum;
+            case '/':
+                if (secondNum == 0) {
+                    throw new ArithmeticException("Ошибка: деление на ноль запрещено");
+                }
+                return firstNum / secondNum;
+            case '%':
+                if (secondNum == 0) {
+                    throw new ArithmeticException("Ошибка: деление на ноль запрещено");
+                }
+                return firstNum % secondNum;
+            case '^':
+                return Math.pow(firstNum, secondNum);
 
-        if (operator == '+') {
-            result = a + b;
-        } else if (operator == '-') {
-            result = a - b;
-        } else if (operator == '*') {
-            result = a * b;
-        } else if (operator == '/') {
-            result = a / b;
-        } else if (operator == '%') {
-            result = a % b;
-        } else if (operator == '^') {
-            for (int i = 0; i < b; i++) {
-                result *= a;
-            }
+            default:
+                throw new IllegalArgumentException("Оператор " + operator + " не поддерживается");
         }
-
-        System.out.println(a + " " + operator + " " + b + " = " + result);
     }
 }
