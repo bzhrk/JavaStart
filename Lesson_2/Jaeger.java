@@ -11,7 +11,6 @@ public class Jaeger {
     private int strength; // 8
 
     public Jaeger() {
-
     }
 
     public Jaeger(String model, String status, String origin,
@@ -24,7 +23,6 @@ public class Jaeger {
         this.speed = speed;
         this.armor = armor;
         this.strength = strength;
-
     }
 
     public String getModel() {
@@ -102,5 +100,4 @@ public class Jaeger {
     public void reloadGun() {
         System.out.println("Reload gun");
     }
-
 }

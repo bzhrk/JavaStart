@@ -1,7 +1,5 @@
 public class JaegerTest {
-
     public static void main(String[] args) {
-
         Jaeger crimsonTyphoon = new Jaeger();
         crimsonTyphoon.setModel("Mark-4");
         crimsonTyphoon.setStatus("Destroyed");
@@ -16,9 +14,14 @@ public class JaegerTest {
         Jaeger guardianBravo = new Jaeger("Mark-6", "Active", "Australian",
                 73.21, 1.975, 7, 9, 8);
 
-        guardianBravo.run();
-        guardianBravo.scan();
-        crimsonTyphoon.reloadGun();
+        System.out.println("Model " + crimsonTyphoon.getModel());
+        System.out.println("Armor " + crimsonTyphoon.getArmor());
+        System.out.println("Speed " + crimsonTyphoon.getSpeed());
+        System.out.println("Height " + crimsonTyphoon.getHeight() + "\n");
 
+        System.out.println("Model " + guardianBravo.getModel());
+        System.out.println("Armor " + guardianBravo.getArmor());
+        System.out.println("Speed " + guardianBravo.getSpeed());
+        System.out.println("Height " + guardianBravo.getHeight());
     }
 }
