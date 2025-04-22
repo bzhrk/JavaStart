@@ -10,7 +10,6 @@ public class GuessNumber {
     }
 
     public void play(Scanner scanner) {
-
         do {
             int currentNumber = (int) (Math.random() * 100) + 1;
             boolean isFirstPlayerMove = true;
