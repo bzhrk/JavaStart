@@ -11,29 +11,29 @@ public class GuessNumber {
 
     public void play(Scanner scanner) {
         do {
-            int currentNumber = (int) (Math.random() * 100) + 1;
-            boolean isFirstPlayerMove = true;
-            firstPlayer.setNumber(-1);
-            secondPlayer.setNumber(-1);
+            int hiddenNum = (int) (Math.random() * 100) + 1;
+            firstPlayer.setNum(-1);
+            secondPlayer.setNum(-1);
 
-            while (firstPlayer.getNumber() != currentNumber &&
-                    secondPlayer.getNumber() != currentNumber) {
-                if (isFirstPlayerMove) {
-                    System.out.println(firstPlayer + " введите число");
-                    firstPlayer.setNumber(scanner.nextInt());
-                    scanner.nextLine();
-                    isFirstPlayerMove = false;
-                } else {
-                    System.out.println(secondPlayer + " введите число");
-                    secondPlayer.setNumber(scanner.nextInt());
-                    scanner.nextLine();
-                    isFirstPlayerMove = true;
+            System.out.println(hiddenNum);
+
+            while (firstPlayer.getNum() != hiddenNum &&
+                    secondPlayer.getNum() != hiddenNum) {
+                System.out.println(firstPlayer + " введите число");
+                firstPlayer.setNum(scanner.nextInt());
+                scanner.nextLine();
+                if (firstPlayer.getNum() == hiddenNum) {
+                    System.out.println("Выиграл: " + firstPlayer);
+                    break;
                 }
-            }
-            if (isFirstPlayerMove) {
-                System.out.println("Выиграл: " + secondPlayer);
-            } else {
-                System.out.println("Выиграл: " + firstPlayer);
+
+                System.out.println(secondPlayer + " введите число");
+                secondPlayer.setNum(scanner.nextInt());
+                scanner.nextLine();
+                if (secondPlayer.getNum() == hiddenNum) {
+                    System.out.println("Выиграл: " + secondPlayer);
+                    break;
+                }
             }
             System.out.println("Хотите продолжить игру? [yes/no]:");
         } while (scanner.nextLine().trim().toLowerCase().equals("yes"));

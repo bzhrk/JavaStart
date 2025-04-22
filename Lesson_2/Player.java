@@ -1,17 +1,17 @@
 public class Player {
-    private String name = "";
-    private int number;
+    private String name;
+    private int num;
 
     public Player(String name) {
         this.name = name;
     }
 
-    public int getNumber() {
-        return number;
+    public int getNum() {
+        return num;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setNum(int number) {
+        this.num = number;
     }
 
     @Override
