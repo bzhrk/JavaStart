@@ -5,6 +5,11 @@ public class JaegerTest {
         crimsonTyphoon.setStatus("Destroyed");
         crimsonTyphoon.setOrigin("China");
 
+        System.out.println("Model " + crimsonTyphoon.getModel());
+        System.out.println("Armor " + crimsonTyphoon.getArmor());
+        System.out.println("Speed " + crimsonTyphoon.getSpeed());
+        System.out.println("Height " + crimsonTyphoon.getHeight() + "\n");
+
         crimsonTyphoon.setHeight(76.2);
         crimsonTyphoon.setWeight(1.722);
         crimsonTyphoon.setSpeed(9);
@@ -13,11 +18,6 @@ public class JaegerTest {
 
         Jaeger guardianBravo = new Jaeger("Mark-6", "Active", "Australian",
                 73.21, 1.975, 7, 9, 8);
-
-        System.out.println("Model " + crimsonTyphoon.getModel());
-        System.out.println("Armor " + crimsonTyphoon.getArmor());
-        System.out.println("Speed " + crimsonTyphoon.getSpeed());
-        System.out.println("Height " + crimsonTyphoon.getHeight() + "\n");
 
         System.out.println("Model " + guardianBravo.getModel());
         System.out.println("Armor " + guardianBravo.getArmor());
